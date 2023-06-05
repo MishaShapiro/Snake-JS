@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.leaderBoard {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	width: 500px;
+	height: 100px;
+	background-color: black;
+}
+
+.currentScore, .currentScoreText, .Record, .RecordText {
+	font-size: 46px;
+	color: orange ;
+}
+
+.messange {
+	width: 800px;
+	font-size: 100px;
+	color: darkorange;
+	position: absolute;
+	top: 400px;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	text-shadow: 3px 3px 3px rgba(206, 89, 55, 1);
+}
+
+.mainFrame {
+	background: black;
+	height: 800px;
+	width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mainFrame > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.snake > div {
+	background: green;
+	width: 90%;
+	height: 90%;
+	border-radius: 8px;
+}
+
+.snakeHead > div {
+	position: relative;
+	background: darkgreen;
+	width: 90%;
+	height: 90%;
+}
+
+/*Декоративная часть змеи*/
+
+.snakeHead[data-direction = U] > div {
+	border-radius: 15px 15px 5px 5px / 30px 30px 5px 5px;
+}
+
+.snakeHead[data-direction = D] > div {
+	border-radius: 5px 5px 15px 15px / 5px 5px 30px 30px;
+}
+
+.snakeHead[data-direction = L] > div {
+	border-radius: 30px 5px 5px 30px / 15px 5px 5px 15px;
+}
+
+.snakeHead[data-direction = R] > div {
+	border-radius: 5px 30px 30px 5px / 5px 15px 15px 5px;
+}
+
+.snakeHead[data-direction = U] > div > div {
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	top: -20px;
+	left: 12.5px;
+	background: pink;
+}
+
+.snakeHead[data-direction = D] > div > div {
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	bottom: -20px;
+	left: 12.5px;
+	background: pink;
+}
+
+.snakeHead[data-direction = L] > div > div {
+	position: absolute;
+	width: 20px;
+	height: 10px;
+	top: 12.5px;
+	left: -20px;
+	background: pink;
+}
+
+.snakeHead[data-direction = R] > div > div {
+	position: absolute;
+	width: 20px;
+	height: 10px;
+	top: 12.5px;
+	right: -20px;
+	background: pink;
+}
+
+.apple > div {
+	background-color: red;
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+div[data-color = evenRect] {
+	background: grey
+}
+
+div[data-color = oddRect] {
+	background: darkgrey
+}
